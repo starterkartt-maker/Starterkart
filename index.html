@@ -25,12 +25,15 @@
       overflow: hidden;
     }
     header img {
-      width: 110px;
-      border-radius: 14px;
+      width: 120px;
+      border-radius: 16px;
       margin-bottom: 10px;
       box-shadow: 0 6px 18px #142e511a;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
       opacity: 0;
-      animation: fadeInDown 1s 0.2s forwards;
+      animation: fadeInDown 1s 0.18s forwards;
     }
     h1 {
       margin: 14px 0 10px;
@@ -44,7 +47,7 @@
       font-size: 1.19rem;
       margin-bottom: 17px;
       opacity: 0;
-      animation: fadeInDown 0.8s 0.35s forwards;
+      animation: fadeInDown 0.8s 0.32s forwards;
     }
     .features {
       display: flex;
@@ -94,7 +97,6 @@
       opacity: 0;
       animation: fadeInUp 0.7s 0.55s forwards;
     }
-    /* Animations */
     @keyframes fadeInDown {
       0% {opacity:0; transform:translateY(-30px);}
       100% {opacity:1; transform:translateY(0);}
@@ -103,7 +105,6 @@
       0% {opacity:0; transform:translateY(40px);}
       100% {opacity:1; transform:translateY(0);}
     }
-    /* About Us */
     .about-section {
       max-width: 780px;
       margin: 48px auto 28px auto;
@@ -135,7 +136,6 @@
       font-weight: 500;
       font-size:1.03em;
     }
-    /* Plans Section */
     .plans-section {
       max-width: 1100px;
       margin: 48px auto 28px auto;
@@ -144,7 +144,7 @@
       box-shadow: 0 12px 36px #c9dbf734;
       padding: 44px 14px 24px 14px;
       opacity: 0;
-      animation: fadeInUp 1.15s 0.77s forwards;
+      animation: fadeInUp 1.1s 0.77s forwards;
     }
     .plans-section h2 {
       margin-top: 0;
@@ -223,7 +223,6 @@
       color:#3b66a3;
       margin-bottom:13px;
     }
-    /* Contact form */
     .form-section {
       max-width: 470px;
       margin: 45px auto 25px auto;
@@ -232,7 +231,7 @@
       border-radius: 15px;
       box-shadow: 0 5px 24px #72b4fb1b;
       opacity: 0;
-      animation: fadeInUp 1.18s 0.98s forwards;
+      animation: fadeInUp 1.13s 0.95s forwards;
     }
     .form-section h3 {
       margin-top: 0;
@@ -297,7 +296,6 @@
       color: #128c7e;
       text-shadow: 0 2px 6px #43e87e5b;
     }
-    /* FAQ */
     .faq-section {
       background: linear-gradient(95deg, #e7f2fd 60%, #f9fcff 100%);
       border-radius: 15px;
@@ -306,7 +304,7 @@
       margin: 48px auto 20px auto;
       box-shadow: 0 6px 24px #b2cefa28;
       opacity: 0;
-      animation: fadeInUp 1.25s 1.1s forwards;
+      animation: fadeInUp 1.18s 1.19s forwards;
     }
     .faq-section h3 {
       color: #1674e6;
@@ -319,7 +317,6 @@
       margin: 19px 0 5px;
       color:#195bc0;
     }
-    /* Footer */
     footer {
       text-align: center;
       padding: 27px 10px 15px 10px;
@@ -339,7 +336,6 @@
       font-size:1.02rem;
       margin-top:8px;
     }
-    /* Responsiveness */
     @media (max-width: 950px) {
       .features { flex-direction: column; gap: 19px; }
       .plans-section, .about-section, .faq-section, .form-section { padding-left:7px; padding-right:7px; }
@@ -455,30 +451,33 @@
     </div>
   </section>
 
-  <form action="https://formsubmit.co/starterkartt@gmail.com" method="POST">
-  <label for="name">Full Name*</label>
-  <input type="text" id="name" name="name" required>
-  <label for="email">Email Address*</label>
-  <input type="email" id="email" name="email" required>
-  <label for="whatsapp">WhatsApp Number</label>
-  <input type="text" id="whatsapp" name="whatsapp">
-  <label for="plan">Interested In</label>
-  <select id="plan" name="plan" required>
-    <option value="">-- Select Plan --</option>
-    <option value="Basic Starter">Basic Starter</option>
-    <option value="Standard Launch">Standard Launch</option>
-    <option value="Premium Boost">Premium Boost</option>
-    <option value="Custom/Other">Custom / Other</option>
-  </select>
-  <label for="message">Message</label>
-  <textarea id="message" name="message" rows="4"></textarea>
-  <button type="submit">Submit Inquiry</button>
-  <!-- Anti-bot field -->
-  <input type="text" name="_honey" style="display:none">
-  <!-- Redirect user to thank you page to prevent resubmits -->
-  <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
-</form>
-
+  <section class="form-section">
+    <h3>Contact / Client Inquiry</h3>
+    <!-- Free form service using Formsubmit -->
+    <form action="https://formsubmit.co/starterkartt@gmail.com" method="POST">
+      <label for="name">Full Name*</label>
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
+      <label for="email">Email Address*</label>
+      <input type="email" id="email" name="email" placeholder="you@email.com" required>
+      <label for="whatsapp">WhatsApp Number</label>
+      <input type="text" id="whatsapp" name="whatsapp" placeholder="Your WhatsApp Number">
+      <label for="plan">Interested In</label>
+      <select id="plan" name="plan" required>
+        <option value="">-- Select Plan --</option>
+        <option value="Basic Starter">Basic Starter</option>
+        <option value="Standard Launch">Standard Launch</option>
+        <option value="Premium Boost">Premium Boost</option>
+        <option value="Custom/Other">Custom / Other</option>
+      </select>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="4" placeholder="Let us know how we can help!"></textarea>
+      <!-- anti-bot honeypot -->
+      <input type="text" name="_honey" style="display:none">
+      <!-- success redirect page -->
+      <!-- You can personalize _next as you get a domain, otherwise remove this line -->
+      <!-- <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html"> -->
+      <button type="submit">Submit Inquiry</button>
+    </form>
     <div style="text-align:center; margin-top:13px;">
       Prefer WhatsApp?
       <a class="whatsapp-link" href="https://wa.me/9818082449" target="_blank">Chat Now!</a>
